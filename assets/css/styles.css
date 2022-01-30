@@ -108,6 +108,11 @@ img {
     height: auto;
 }
 
+::selection {
+    background-color: var(--first-color);
+    color: #FFFFFF;
+  }
+
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
     padding: 2rem 0 4rem;
@@ -351,8 +356,48 @@ img {
 }
 
 /*==================== ABOUT ====================*/
+.about__img {
+    width: 200px;
+    border-radius: 0.5rem;
+    justify-self: center;
+    align-self: center;
+}
 
+.about__description {
+    text-align: center;
+    margin-bottom: var(--mb-2-5);
+}
 
+.about__info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2-5);
+}
+
+.about__info-title {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.about__info-name {
+    font-size: var(--small-font-size);
+}
+
+.about__info-title,
+.about__info-name {
+    display: block;
+    text-align: center;
+}
+
+.about__buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button:hover  .button__icon-download{
+    transform: translateY(0.25rem);
+}
 /*==================== SKILLS ====================*/
 
 
