@@ -14,8 +14,11 @@ if (navClose) {
   })
 }
 
-
-/*==================== REMOVE MENU MOBILE ====================*/
+navMenu.addEventListener('click', ({ target }) => {
+  if (target.className.includes('nav__link') || target.className.includes('nav__icon')) {
+    navMenu.classList.remove('show-menu');
+  }
+})
 
 
 /*==================== ACCORDION SKILLS ====================*/
