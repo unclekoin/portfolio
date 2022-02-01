@@ -514,7 +514,7 @@ img {
     width: 20%;
 }
 
-.skills__close .skills__list{
+.skills__list{
     height: 0;
     overflow: hidden;
 }
