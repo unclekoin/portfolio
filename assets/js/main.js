@@ -1,9 +1,6 @@
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
-const skillsContent = document.querySelectorAll('.skills__content');
-const skillsHeader = document.querySelectorAll('.skills__header');
-const skillsContainer = document.querySelector('.skills__container');
 
 if (navToggle) {
   navToggle.addEventListener('click', () => {
@@ -22,6 +19,10 @@ navMenu.addEventListener('click', ({ target }) => {
     navMenu.classList.remove('show-menu');
   }
 });
+
+const skillsContent = document.querySelectorAll('.skills__content');
+const skillsHeader = document.querySelectorAll('.skills__header');
+const skillsContainer = document.querySelector('.skills__container');
 
 skillsContainer.addEventListener('click', ({ target }) => {
   if (target.closest('.skills__header')) {
@@ -58,7 +59,27 @@ tabs.forEach((tab) => {
   });
 });
 
-/*==================== SERVICES MODAL ====================*/
+const modalViews = document.querySelectorAll('.services__modal');
+const modalBtns = document.querySelectorAll('.services__button');
+const modalCloses = document.querySelectorAll('.services__modal-close');
+
+const modal = (index) => {
+  modalViews[index].classList.add('active-modal');
+}
+
+modalBtns.forEach((modalBtn, index) => {
+  modalBtn.addEventListener('click', () => {
+    modal(index);
+  })
+})
+
+modalCloses.forEach((modalClose) => {
+  modalClose.addEventListener('click', () => {
+    modalViews.forEach((modalView) => {
+      modalView.classList.remove('active-modal')
+    })
+  })
+})
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 
