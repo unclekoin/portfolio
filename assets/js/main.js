@@ -65,23 +65,34 @@ const modalCloses = document.querySelectorAll('.services__modal-close');
 
 const modal = (index) => {
   modalViews[index].classList.add('active-modal');
-}
+};
 
 modalBtns.forEach((modalBtn, index) => {
   modalBtn.addEventListener('click', () => {
     modal(index);
-  })
-})
+  });
+});
 
 modalCloses.forEach((modalClose) => {
   modalClose.addEventListener('click', () => {
     modalViews.forEach((modalView) => {
-      modalView.classList.remove('active-modal')
-    })
-  })
-})
+      modalView.classList.remove('active-modal');
+    });
+  });
+});
 
-/*==================== PORTFOLIO SWIPER  ====================*/
+const swiper = new Swiper('.portfolio__swiper', {
+  cssMode: true,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+});
 
 /*==================== TESTIMONIAL ====================*/
 
