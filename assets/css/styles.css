@@ -32,6 +32,7 @@
     --smaller-font-size: 0.75rem;
 
     /*========== Font weight ==========*/
+    --font-normal: 400;
     --font-medium: 500;
     --font-semi-bold: 600;
 
@@ -88,7 +89,7 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
-    font-weight: var(--font-semi-bold);
+    font-weight: var(--font-normal);
 }
 
 h1, h2, h3, h4 {
@@ -344,6 +345,15 @@ img {
     font-size: 1.25rem;
     margin-left: var(--mb-0-5);
     transition: 0.3s;
+}
+
+.button--white {
+    background-color: #FFFFFF;
+    color: var(--first-color);
+}
+
+.button--white:hover {
+    background-color: #FFFFFF;
 }
 
 .button:hover .button__icon {
@@ -753,7 +763,41 @@ img {
 }
 
 /*==================== PROJECT IN MIND ====================*/
+.project {
+    text-align: center;
+}
 
+.project__bg {
+    background-color: var(--first-color-second);
+    padding-top: 3rem;
+}
+.project__container {
+}
+
+.project__data {
+}
+.project__title {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-0-75);
+}
+
+.project__description {
+    margin-bottom: var(--mb-1-5);
+}
+
+.project__title,
+.project__description {
+    color: #FFFFFF;
+}
+
+.project__icon {
+}
+.button__icon {
+}
+.project__img {
+    width: 232px;
+    justify-self: center;
+}
 
 /*==================== TESTIMONIAL ====================*/
 
