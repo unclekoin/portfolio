@@ -94,7 +94,6 @@ const swiperPortfolio = new Swiper('.portfolio__swiper', {
   },
 });
 
-/*==================== TESTIMONIAL ====================*/
 const swiperTestimonial = new Swiper('.testimonial__swiper', {
   loop: true,
   grabCursor: true,
