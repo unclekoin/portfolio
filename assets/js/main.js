@@ -81,7 +81,7 @@ modalCloses.forEach((modalClose) => {
   });
 });
 
-const swiper = new Swiper('.portfolio__swiper', {
+const swiperPortfolio = new Swiper('.portfolio__swiper', {
   cssMode: true,
   loop: true,
   navigation: {
@@ -95,6 +95,21 @@ const swiper = new Swiper('.portfolio__swiper', {
 });
 
 /*==================== TESTIMONIAL ====================*/
+const swiperTestimonial = new Swiper('.testimonial__swiper', {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 48,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  },
+  breakpoints: {
+    568: {
+      slidesPerView: 2,
+    }
+  }
+});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
