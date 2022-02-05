@@ -90,7 +90,7 @@ const swiperPortfolio = new Swiper('.portfolio__swiper', {
   },
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: true,
   },
 });
 
@@ -101,16 +101,40 @@ const swiperTestimonial = new Swiper('.testimonial__swiper', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-    dynamicBullets: true
+    dynamicBullets: true,
   },
   breakpoints: {
     568: {
       slidesPerView: 2,
-    }
-  }
+    },
+  },
 });
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const footerYear = document.querySelector('.footer__date');
+footerYear.textContent = new Date().getFullYear();
+
+const sections = document.querySelectorAll('section[id]');
+
+const scrollActive = () => {
+  const scrollY = window.pageYOffset;
+
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 50;
+    const sectionId = current.getAttribute('id');
+    const currentAnchor = document.querySelector(
+      `.nav__menu a[href*=${sectionId}]`
+    );
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      currentAnchor.classList.add('active-link');
+    } else {
+      currentAnchor.classList.remove('active-link');
+    }
+  });
+};
+
+window.addEventListener('scroll', scrollActive);
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 
