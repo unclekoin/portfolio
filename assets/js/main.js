@@ -15,7 +15,10 @@ if (navClose) {
 }
 
 navMenu.addEventListener('click', ({ target }) => {
-  if (target.classList.contains('nav__link')) {
+  if (
+    target.classList.contains('nav__icon') ||
+    target.classList.contains('nav__link')
+  ) {
     navMenu.classList.remove('show-menu');
   }
 });
@@ -136,8 +139,50 @@ const scrollActive = () => {
 
 window.addEventListener('scroll', scrollActive);
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
+const scrollHeader = () => {
+  const nav = document.getElementById('header');
+  if (window.scrollY >= 80) {
+    nav.classList.add('scroll-header');
+  } else {
+    nav.classList.remove('scroll-header');
+  }
+};
 
-/*==================== SHOW SCROLL UP ====================*/
+window.addEventListener('scroll', scrollHeader);
+
+const scrollUp = () => {
+  const scrollUp = document.getElementById('scroll-up');
+  if (window.scrollY >= 560) {
+    scrollUp.classList.add('show-scroll');
+  } else {
+    scrollUp.classList.remove('show-scroll');
+  }
+};
+
+window.addEventListener('scroll', scrollUp);
 
 /*==================== DARK LIGHT THEME ====================*/
+const themeButton = document.getElementById('theme-button');
+const darkTheme = 'dark-theme';
+const iconTheme = 'uil-sun';
+
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
+
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () =>
+  document.body.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun';
+
+if (selectedTheme) {
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme);
+}
+
+themeButton.addEventListener('click', () => {
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+
+  localStorage.setItem('selected-theme', getCurrentTheme());
+  localStorage.setItem('selected-icon', getCurrentIcon());
+})
