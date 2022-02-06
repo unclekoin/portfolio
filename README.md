@@ -3,4 +3,4 @@
 * [Unicons](https://iconscout.com/unicons)
 * [Swiper](https://swiperjs.com/)
 
-![Resume CV](./preview.png)
+![Resume CV](./assets/img/screenshot.png)
